@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.css" integrity="sha256-YR4HrDE479EpYZgeTkQfgVJq08+277UXxMLbi/YP69o=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+
+    <!--Left Panel-->
+    <div id="sidebar">
+      <h2 id="slideTitle">Overview of Available Houses in Beijing</h2>
+
+      <!-- information  -->
+      <div id ="infoForSlide0" class="information">
+        <p>Guess now you can afford a house</p>
+        <p>Here is a map of muliple samples of available housing units in Bejing.</p>
+        <p>The following slides map will help you select your favorite one by their area,
+          unit price, built year and whether within a school disctrict.</p>
+        <p>Feel free to click the points on the maps to check out their detailed information.</p>
+      </div>
+
+      <div id ="infoForSlide1" class="information" style="display: none">
+        <p>I summmarize the number of houses in each category.
+          Below shows the total numbers of different area for houses.</p>
+        <table>
+          <tr><th>Less than 70m^2: </th><td>28 units</td></tr>
+          <tr><th>Between 70 and 100m^2: </th><td>25 units</td></tr>
+          <tr><th>Larger than 100m^2: </th><td>25 units</td></tr>
+        </table>
+        <p>The result shows similar numbers of housing in three ranges of area</p>
+        <p>According to research, the most comfortable living space for a people is 30m^2.
+            Consider that standard when purchasing!</p>
+      </div>
+
+      <div id ="infoForSlide2" class="information" style="display: none">
+        <p>I summmarize the number of houses in each category.
+          Below shows the total numbers of units in different ranges of price.</p>
+        <table>
+          <tr><th>Less than ￥20,000/m^2: </th><td>5 units</td></tr>
+          <tr><th>Between ￥20,000 and ￥40,000/m^2: </th><td>43 units</td></tr>
+          <tr><th>Higher than ￥40,000/m^2: </th><td>6 units</td></tr>
+        </table>
+        <p>The unit price of majority houses are between ￥20,000/m^2 and ￥40,000/m^2,
+            which is quite acceptable.</p>
+      </div>
+
+      <div id ="infoForSlide3" class="information" style="display: none">
+         <p>I summmarize the number of houses in each category.
+           Below shows the numbers of houses in different categories of built year.</p>
+        <table>
+          <tr><th>Before 1990: </th><td>13 units</td></tr>
+          <tr><th>Between 1990 and 2000: </th><td>25 units</td></tr>
+          <tr><th>Between 2000 and 2010: </th><td>33 unit</td></tr>
+          <tr><th>After 2010: </th><td>7 units</td></tr>
+        </table>
+        <p>Most of these sample apartment buildings were built between 2000 and 2010.</p>
+        <p>Particularly, I suggest selecting houses whose built years are after 2000.</p>
+      </div>
+
+      <div id ="infoForSlide4" class="information" style="display: none">
+        <p>Let's zoom in a little bit to see the school districts.
+          I summmarize the number of houses in each category.
+          Below shows the numbers of houses within or outside the school disctrict.</p>
+        <table>
+          <tr><th>Within the school district: </th><td>46 units</td></tr>
+          <tr><th>Outside the school district: </th><td>32 units</td></tr>
+        </table>
+        <p>More houses are within the school district.</p>
+        <p>For your next generation, a house within the school district is a good choice.
+            Besides, they have higher potential interest rate.</p>
+      </div>
+
+      <!-- button -->
+      <div id="buttons">
+        <button id="button-previous" class="buttons" style="display: none;">Previous</button>
+        <button id="button-next" class="buttons">Next</button>
+      </div>
+
+      <!-- page number -->
+      <div id="pageNumber">
+        1
+      </div>
+
+    </div>
+
+
+    <!-- Legend -->
+    <div id="legend1" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="area1" class="legendCircle"></div>
+        Less than 70m^2
+      </div>
+      <div class="legend-item">
+        <div id="area2" class="legendCircle"></div>
+        Between 70 and 100m^2
+      </div>
+      <div class="legend-item">
+        <div id="area3" class="legendCircle"></div>
+        Larger than 100m^2
+      </div>
+    </div>
+
+    <div id="legend2" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="below20k" class="legendCircle"></div>
+        Below ￥20,000/m^2
+      </div>
+      <div class="legend-item">
+        <div id="between20kand40k" class = "legendCircle"></div>
+        Between ￥20,000/m^2 and￥40,000/m^2
+      </div>
+      <div class="legend-item">
+        <div id="over40k" class="legendCircle"></div>
+        Over ￥40,000/m^2
+      </div>
+    </div>
+
+    <div id="legend3" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="before90" class="legendCircle"></div>
+        Before 1990
+      </div>
+      <div class="legend-item">
+        <div id="between90and00" class="legendCircle"></div>
+        Between 1990 and 2000
+      </div>
+      <div class="legend-item">
+        <div id="between00and10" class="legendCircle"></div>
+        Between 2000 and 2010
+      </div>
+      <div class="legend-item">
+        <div id="over10" class="legendCircle"></div>
+        After 2010
+      </div>
+    </div>
+
+    <div id ="legend4" class="legend" style="display: none;">
+      <div class="legend-item">
+        <div id="schooDistrict" class="legendCircle"></div>
+        Within School District
+      </div>
+      <div class="legend-item">
+        <div id="schooDistrictNo" class="legendCircle"></div>
+        Outside School District
+      </div>
+    </div>
+
+    <!-- End HTML -->
+
+    <!-- Map -->
+  <div id="map" style="display"></div>
+
+
+    <!-- Javascript Imports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js" integrity="sha256-6BZRSENq3kxI4YYBDqJ23xg0r1GwTHEpvp3okdaIqBw=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js" integrity="sha256-O4179En8zabOlPYBNvGp8cF0uh0vnSZpW4Q6Ul1h+8c=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/selectionStandard.js"></script>
+    <script src="js/SlideShow.js"></script>
+
+  </body>
+</html>
